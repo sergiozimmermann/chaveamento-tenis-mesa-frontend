@@ -1,0 +1,22 @@
+:host {
+    ::ng-deep {
+        .esqueci-senha {
+            color: var(--text-color-link);
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+        .esqueci-senha:active {
+            color: #2563eb;
+        }
+
+        #card-login {
+            width: 300px;
+        }
+
+        .form-login {
+            width: 100%;
+            margin-bottom: 100px;
+        }
+    }
+}

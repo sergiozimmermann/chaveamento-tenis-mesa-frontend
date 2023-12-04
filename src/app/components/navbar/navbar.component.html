@@ -1,0 +1,23 @@
+<nav class="navbar navbar-expand-lg navbar-transparent navbar-relative fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-wrapper">
+            <span class="navbar-brand" href="javascript:void(0)">{{getTitle()}}</span>
+        </div>
+        <button mat-raised-button class="navbar-toggler" type="button" (click)="sidebarToggle()">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navigation">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <button pButton pRipple type="button" icon="pi pi-user" class="p-button-rounded"
+                        (click)="menu.toggle($event)"></button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<p-menu #menu [popup]="true" [model]="usuarioMenu" appendTo="body"></p-menu>

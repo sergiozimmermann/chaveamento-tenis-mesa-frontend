@@ -1,0 +1,32 @@
+<div class="flex w-full h-full justify-content-center align-items-center">
+  <div id="card-login" class="card flex align-items-center">
+    <form class="form-login" [formGroup]="formulario">
+      <div class="flex flex-column justify-content-center p-4" style="row-gap: 6px;">
+        <div class="flex justify-content-center">
+          <h2 class="font-medium">{{'Torneio TM'}}</h2>
+        </div>
+        <div class="flex justify-content-center" style="margin-bottom: 15px;">
+          <img src="../../../assets/img/login-img.png" alt="login image">
+        </div>
+        <div class="w-full">
+          <input id="dsEmail" pInputText formControlName="dsEmail" [placeholder]="'Email'" [email]="true">
+          <ng-container *ngIf="formulario.get('dsEmail')?.invalid && tentouLogar">
+            <span class="invalid-text">{{'Insira um email válido'}}</span>
+          </ng-container>
+        </div>
+        <div class="w-full">
+          <input id="dsSenha" type="password" pInputText formControlName="dsSenha" [placeholder]="'Senha'">
+          <ng-container *ngIf="formulario.get('dsSenha')?.invalid && tentouLogar">
+            <span class="invalid-text">{{'Insira uma senha válida'}}</span>
+          </ng-container>
+        </div>
+        <div class="w-full" style="margin-top: 8px;">
+          <button pButton pRipple class="w-full" [label]="'Entrar'" (click)="logar()"></button>
+        </div>
+        <div class="flex justify-content-center">
+          <a class="esqueci-senha" (click)="mostrarEsqueciSenha = true">{{'Esqueci minha senha'}}</a>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
